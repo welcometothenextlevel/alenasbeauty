@@ -253,7 +253,8 @@
   ];
   let dismissed = false;
   try { dismissed = sessionStorage.getItem('ab-toast') === '1'; } catch (_) {}
-  if (toast && !dismissed) {
+  const phone = matchMedia('(max-width: 760px)').matches;
+  if (toast && !dismissed && !phone) {
     const tText = $('[data-toast-text]');
     const tName = $('[data-toast-name]');
     let k = 0, timer = null, suppressed = false, started = false;
