@@ -627,12 +627,15 @@ html.pre-intro [data-hero-title] .line > span { opacity: 0; animation: failsafe 
   .header-cta { gap: 10px; }
   .hero-actions .btn { flex: 1 1 100%; }
   .hero-proof { gap: 10px 18px; font-size: 14px; }
-  .hero-arch { width: 70%; height: 90%; right: 0; }
-  .hero-still { width: 42%; border-width: 5px; }
-  .hero-stamp { left: 8%; top: 4%; width: 74px; }
-  .float-review { width: 206px; padding: 12px 13px; font-size: 13px; border-radius: 15px; }
-  .fr-1 { left: -1%; top: 30%; }
-  .fr-2 { right: -2%; bottom: 2%; }
+  /* phones: the video stays fully visible, the reviews float underneath it */
+  .hero-media { height: calc(104vw + 190px); max-width: none; }
+  .hero-arch { width: 72%; height: 104vw; right: 0; top: 0; }
+  .hero-still { width: 40%; top: calc(54vw + 50px); bottom: auto; border-width: 5px; }
+  .hero-stamp { left: 5%; top: 5%; width: 72px; }
+  .float-review { width: calc(50% - 6px); padding: 12px 13px; font-size: 13px; line-height: 1.4; border-radius: 15px; }
+  .fr-head .stars svg { width: 12px; height: 12px; }
+  .fr-1 { left: 0; top: calc(104vw + 52px); }
+  .fr-2 { right: 0; left: auto; bottom: auto; top: calc(104vw + 14px); }
   .arch-tag { display: none; }
   .rail-head { flex-direction: column; align-items: flex-start; }
   .rail-controls { width: 100%; }
@@ -680,8 +683,7 @@ html.pre-intro [data-hero-title] .line > span { opacity: 0; animation: failsafe 
 }
 
 @media (max-width: 380px) {
-  .float-review { width: 186px; }
-  .fr-1 { top: 34%; }
+  .float-review { font-size: 12.5px; padding: 11px 11px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
